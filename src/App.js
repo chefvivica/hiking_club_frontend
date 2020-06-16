@@ -9,6 +9,7 @@ import NavBar from './components/NavBar.js';
 import WelcomePage from './components/WelcomePage.js';
 import MembersContainer from './container/MembersContainer'
 import HikesContainer from './container/HikesContainer'
+import HikeProfile from './components/HikeProfile';
 
 class App extends Component {
 
@@ -28,16 +29,16 @@ class App extends Component {
       <Router>
         <div className="App">
           <NavBar />
-          <Route exact path='/' component={WelcomePage}/>
+          <Route exact path='/hikes/:id' component={HikeProfile} />
           <Route 
             exact path='/hikes' 
             render={routerProps => <HikesContainer 
               {...routerProps} 
               hikes={this.state}
-            />}
+              />}
           />
           <Route exact path='/members' component={MembersContainer}/>
-          {/* <Route exact path='/' component={MainContainer} /> */}
+          <Route exact path='/' component={WelcomePage}/>
         </div>
       </Router>
     );
