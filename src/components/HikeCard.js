@@ -6,7 +6,8 @@ const HikeCard = (props) => {
   
   const cardStyling = { 
     width: '400px', 
-    background: 'red'
+    background: 'red',
+    
   }
 
   return(
