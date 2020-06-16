@@ -21,8 +21,9 @@ class App extends Component {
     .then(resp => resp.json())
     .then(hikes => this.setState({ hikes }))
   };
-
+  
   render(){
+    // console.log(this.state)
     return (
       <Router>
         <div className="App">
@@ -32,7 +33,7 @@ class App extends Component {
             exact path='/hikes' 
             render={routerProps => <HikesContainer 
               {...routerProps} 
-              hikes={this.state.hikes}
+              hikes={this.state}
             />}
           />
           <Route exact path='/members' component={MembersContainer}/>

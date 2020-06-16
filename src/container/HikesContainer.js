@@ -4,13 +4,14 @@ import HikeCard from '../components/HikeCard'
 export class HikesContainer extends Component {
 
   render() {
-
-    const { hikes } = this.props
+    const { hikes } = this.props.hikes
 
     return (
+
       <div>
-        {hikes.map(hike => <HikeCard key={hike.id} {...hike}/>)}
+        {hikes.map(hike=> <HikeCard {...hike} key={hike.id}/>)}
       </div>
+      
     )
   }
 }
