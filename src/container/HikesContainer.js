@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
+import HikeCard from '../components/HikeCard'
 
 export class HikesContainer extends Component {
+
   render() {
+
+    const { hikes } = this.props
+
     return (
       <div>
-        <h1>Hikes</h1>
+        {hikes.map(hike => <HikeCard key={hike.id} {...hike}/>)}
       </div>
     )
   }
