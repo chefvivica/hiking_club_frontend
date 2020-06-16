@@ -17,7 +17,7 @@ class App extends Component {
   }
 
   componentDidMount(){
-    fetch('http://localhost:3002/hikes')
+    fetch('http://localhost:3000/hikes')
     .then(resp => resp.json())
     .then(hikes => this.setState({ hikes }))
   };

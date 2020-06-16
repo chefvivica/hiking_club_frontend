@@ -7,13 +7,11 @@ class Login extends Component {
     password: ''
   }
 
-  handleChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value})
-  }
-
+  handleChange = e => this.setState({ [e.target.name]: e.target.value})
   render() {
-    const {username, password} = this.state
-    console.log("login🌳🦚🐓", this.state)
+    const {username, password} =this.state
+  
+
     return (
       <form>
         <h1>Login</h1>
