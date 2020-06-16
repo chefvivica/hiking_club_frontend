@@ -11,7 +11,7 @@ const HikeCard = (props) => {
       <h5>Date: {start_at}</h5>
       <h5>Est. Distance: {distance} miles</h5>
       <h5>Est. Duration: {duration} hours</h5>
-  <p>Host: {name}</p>
+      <p>Host: {name}</p>
     </div> 
   )
 }
