@@ -30,7 +30,6 @@ componentDidMount() {
       {/** we need to think about how to implement the comments */}
       
     </div>
-     
     )
   }
  
