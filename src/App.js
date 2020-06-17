@@ -28,9 +28,10 @@ class App extends Component {
   };
 
   addMember = (memberObj) => {
-    let newMembers = [...this.state.hikes]
-    newMembers.push(memberObj)
-    this.setState({ members: newMembers})
+    // let newMembers = [...this.state.hikes]
+    // newMembers.push(memberObj)
+    // this.setState({ members: newMembers})
+    this.setState({members: [...this.state.members, memberObj]})
   };
   
   render(){
@@ -43,7 +44,7 @@ class App extends Component {
           <Route exact path='/hikes/:id' render={routerProps =>{
             const hikeId = parseInt(routerProps.match.url.split("/")[2])
             const targetHike = this.state.hikes.find(hike=> hike.id === hikeId)
-            return <HikeProfile hike={targetHike} /> 
+            return <HikeProfile hike={targetHike} hikeId={hikeId} hikeId={parseInt(routerProps.match.url.split("/")[2])}/> 
           }}/>
           <Route 
             exact path='/hikes' 

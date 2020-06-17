@@ -5,15 +5,10 @@ const headers = {
   Accept: 'application/json'
 }
 
+const initState = {name: '', username: '', email: '', password: '', confirmation: ''}
 export class Signup extends Component {
- 
-  state = {
-    name: '',
-    username: '',
-    email: '',
-    password: '',
-    confirmation: ''  
-  }
+  
+  state = initState
 
   handleChange = (e) => {
     this.setState({
@@ -22,12 +17,8 @@ export class Signup extends Component {
   };
 
   handleSubmit = (e) => {
-    e.preventDefault()
-    const {name, username, password} = this.state
-    
+    e.preventDefault()  
     if(this.state.password === this.state.confirmation){
-      // console.log(this.state)
-
       fetch('http://localhost:3000/members', {
         method: "POST",
         headers: {
@@ -42,13 +33,11 @@ export class Signup extends Component {
         })
       })
         .then(resp => resp.json())
-        .then(console.log)
-<<<<<<< HEAD
-=======
+        .then(data=> this.props.addMember(data))
     } else {
       alert("Passwords don't match")
->>>>>>> ad2b0440062206f6e32473998279b4e1f343a46c
     }
+    this.setState(initState)
   }
 
   render() {
