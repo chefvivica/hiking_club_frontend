@@ -40,7 +40,7 @@ export class Signup extends Component {
         })
       })
         .then(resp => resp.json())
-        .then(this.props.addMember)
+        .then(console.log)
     }
   }
 
