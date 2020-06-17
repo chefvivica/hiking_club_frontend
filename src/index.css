@@ -28,3 +28,14 @@ code {
 button {
   cursor: pointer;
 }
+
+.members{
+  text-align: center;
+  border: rgb(245, 232, 232) solid 1px;
+  border-radius: 3%;
+  padding: 1rem;
+  width: 10rem;
+  height: 15rem;
+  display: inline-grid;
+  margin: 1rem 2rem;
+}
