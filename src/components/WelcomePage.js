@@ -5,11 +5,14 @@ import Signup from './Signup'
 
 export class WelcomePage extends Component {
   render() {
+
+    const { addMember } = this.props
+
     return (
       <div>
         <h1>Welcome To Hiking Club</h1>
         <Login/>
-        <Signup/>
+        <Signup addMember={addMember}/>
       </div>
     )
   }

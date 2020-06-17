@@ -26,6 +26,12 @@ class App extends Component {
       .then(resp => resp.json())
       .then(members => this.setState({ members }))
   };
+
+  addMember = (memberObj) => {
+    let newMembers = [...this.state.hikes]
+    newMembers.push(memberObj)
+    this.setState({ members: newMembers})
+  };
   
   render(){
     // console.log(this.state)
@@ -52,7 +58,15 @@ class App extends Component {
               />
             }
           />
-          <Route exact path='/' component={WelcomePage}/>
+          <Route 
+            exact path='/' 
+            render={routerProps => 
+              <WelcomePage
+                {...routerProps}
+                addMember={this.addMember} 
+              />
+            }
+          />
         </div>
       </Router>
     );

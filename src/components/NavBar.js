@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link, NavLink } from 'react-router-dom';
-import{NavDropdown, Navbar, Nav} from 'react-bootstrap';
+import {NavDropdown, Navbar, Nav} from 'react-bootstrap';
 
 
 export class NavBar extends Component {
