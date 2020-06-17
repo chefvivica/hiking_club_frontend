@@ -1,10 +1,11 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
+import HikeProfile from './HikeProfile';
 
 const HikeCard = (props) => {
 
   const {location, start_at, distance, duration,id } = props
-  const {name} = props.host
+  const {username} = props.host
   let history = useHistory();
   // console.log("card!!!", history)
 
@@ -14,8 +15,9 @@ const HikeCard = (props) => {
       <h5>Date: {start_at}</h5>
       <h5>Est. Distance: {distance} miles</h5>
       <h5>Est. Duration: {duration} hours</h5>
-      <p>Host: {name}</p>     
+      <p>Host: {username}</p>     
       <button onClick={() => history.push(`/hikes/${id}`)}>Visit this hike !</button>
+    
     </div> 
 
   )

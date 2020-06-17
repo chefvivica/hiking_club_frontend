@@ -39,7 +39,12 @@ class App extends Component {
       <Router>
         <div className="App">
           <NavBar />
-          <Route exact path='/hikes/:id' component={HikeProfile} />
+          {/* <Route exact path='/hikes/:id' component={HikeProfile} /> */}
+          <Route exact path='/hikes/:id' render={routerProps =>{
+            const hikeId = parseInt(routerProps.match.url.split("/")[2])
+            const targetHike = this.state.hikes.find(hike=> hike.id === hikeId)
+            return <HikeProfile hike={targetHike} /> 
+          }}/>
           <Route 
             exact path='/hikes' 
             render={routerProps => 
