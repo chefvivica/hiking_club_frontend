@@ -14,13 +14,17 @@ import HikeProfile from './components/HikeProfile';
 class App extends Component {
 
   state = {
-    hikes: []
+    hikes: [],
+    members: []
   }
 
   componentDidMount(){
     fetch('http://localhost:3000/hikes')
-    .then(resp => resp.json())
-    .then(hikes => this.setState({ hikes }))
+      .then(resp => resp.json())
+      .then(hikes => this.setState({ hikes }))
+    fetch('http://localhost:3000/members')
+      .then(resp => resp.json())
+      .then(members => this.setState({ members }))
   };
   
   render(){
@@ -32,12 +36,22 @@ class App extends Component {
           <Route exact path='/hikes/:id' component={HikeProfile} />
           <Route 
             exact path='/hikes' 
-            render={routerProps => <HikesContainer 
-              {...routerProps} 
-              hikes={this.state}
-              />}
+            render={routerProps => 
+              <HikesContainer 
+                {...routerProps} 
+                hikes={this.state.hikes}
+              />
+            }
           />
-          <Route exact path='/members' component={MembersContainer}/>
+          <Route 
+            exact path='/members' 
+            render={routerProps => 
+              <MembersContainer
+                {...routerProps} 
+                members={this.state.members}
+              />
+            }
+          />
           <Route exact path='/' component={WelcomePage}/>
         </div>
       </Router>

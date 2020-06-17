@@ -5,7 +5,7 @@ import WelcomePage from '../components/WelcomePage'
 import HikesContainer from './HikesContainer'
 import MembersContainer from './MembersContainer'
 
-
+// currently not being used...
 
 export class MainContainer extends Component {
   render() {

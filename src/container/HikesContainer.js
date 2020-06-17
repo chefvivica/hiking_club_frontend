@@ -5,7 +5,7 @@ import HikeCard from '../components/HikeCard'
 export class HikesContainer extends Component {
 
   render() {
-    const { hikes } = this.props.hikes
+    const { hikes } = this.props
 
     return (
       <div>

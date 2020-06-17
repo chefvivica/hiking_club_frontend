@@ -6,7 +6,7 @@ const HikeCard = (props) => {
   const {location, start_at, distance, duration,id } = props
   const {name} = props.host
   let history = useHistory();
-  console.log("card!!!", history)
+  // console.log("card!!!", history)
 
   return(
     <div  className="all-hikes">
