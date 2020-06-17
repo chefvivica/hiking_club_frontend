@@ -10,6 +10,8 @@ import WelcomePage from './components/WelcomePage.js';
 import MembersContainer from './container/MembersContainer'
 import HikesContainer from './container/HikesContainer'
 import HikeProfile from './components/HikeProfile';
+import Signup from './components/Signup';
+import Login from './components/Login';
 
 class App extends Component {
 
@@ -28,9 +30,6 @@ class App extends Component {
   };
 
   addMember = (memberObj) => {
-    // let newMembers = [...this.state.hikes]
-    // newMembers.push(memberObj)
-    // this.setState({ members: newMembers})
     this.setState({members: [...this.state.members, memberObj]})
   };
   

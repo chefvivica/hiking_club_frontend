@@ -21,10 +21,7 @@ export class Signup extends Component {
     if(this.state.password === this.state.confirmation){
       fetch('http://localhost:3000/members', {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json"
-        },
+        headers: headers,
         body: JSON.stringify({
           name: this.state.name,
           username: this.state.username,
@@ -43,7 +40,6 @@ export class Signup extends Component {
   render() {
 
     const { name, username, email, password, confirmation } = this.state
-
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
