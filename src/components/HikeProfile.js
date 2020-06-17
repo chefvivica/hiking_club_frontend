@@ -13,11 +13,13 @@ export class HikeProfile extends Component {
       <h5>Est. Distance: {distance} miles</h5>
       <h5>Est. Duration: {duration} hours</h5>
       <h5 className="description">Description: {description}</h5>
-      <h5>Host: {host.name}</h5>
+      {/* <h5>Host: {host.name}</h5> */}
       <hr></hr>
         <div>
-        Joined members: {members.map(member=>
-        <strong><p key={members.indexOf(member)}>{member.name}</p></strong>)}
+          This Hike's Group: 
+          <strong><p>{host.name} (Host)</p></strong>
+          {members.map(member=>
+          <strong><p key={members.indexOf(member)}>{member.name}</p></strong>)}
         </div>
       <button>Join!</button>
       <br></br><br></br>

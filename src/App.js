@@ -32,6 +32,10 @@ class App extends Component {
   addMember = (memberObj) => {
     this.setState({members: [...this.state.members, memberObj]})
   };
+
+  addHike = (hikeObj) => {
+    this.setState({hikes: [...this.state.hikes, hikeObj]})
+  };
   
   render(){
     // console.log(this.state)
@@ -51,6 +55,7 @@ class App extends Component {
               <HikesContainer 
                 {...routerProps} 
                 hikes={this.state.hikes}
+                addHike={this.addHike}
               />
             }
           />
