@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  background-color: rgb(255, 255, 255) !important;
+}
+
+.main-menu {
+  height: 80px; 
+  background-color: black !important;
+}
+
