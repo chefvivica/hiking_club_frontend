@@ -10,6 +10,7 @@ export class Signup extends Component {
   state = {
     name: '',
     username: '',
+    email: '',
     password: '',
     confirmation: ''  
   }
@@ -25,28 +26,34 @@ export class Signup extends Component {
     const {name, username, password} = this.state
     
     if(this.state.password === this.state.confirmation){
-      console.log(this.state)
+      // console.log(this.state)
 
       fetch('http://localhost:3000/members', {
         method: "POST",
-        headers: { 
-          'Content-Type': 'application/json', 
-          Accept: 'application/json'
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
         },
         body: JSON.stringify({
-          name: name,
-          username: username,
-          password: password
+          name: this.state.name,
+          username: this.state.username,
+          email: this.state.email,
+          password: this.state.password
         })
       })
         .then(resp => resp.json())
         .then(console.log)
+<<<<<<< HEAD
+=======
+    } else {
+      alert("Passwords don't match")
+>>>>>>> ad2b0440062206f6e32473998279b4e1f343a46c
     }
   }
 
   render() {
 
-    const { name, username, password, confirmation } = this.state
+    const { name, username, email, password, confirmation } = this.state
 
     return (
       <div>
@@ -70,6 +77,17 @@ export class Signup extends Component {
               name="username" 
               value={username} 
               placeholder="Create username"
+              onChange={this.handleChange} 
+            />
+          </div>
+          <br></br>
+          <div>
+            <label htmlFor="email">Email: </label>
+            <input 
+              type="text" 
+              name="email" 
+              value={email} 
+              placeholder="Enter email address"
               onChange={this.handleChange} 
             />
           </div>
