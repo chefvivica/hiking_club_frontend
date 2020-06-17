@@ -30,9 +30,6 @@ class App extends Component {
   };
 
   addMember = (memberObj) => {
-    // let newMembers = [...this.state.hikes]
-    // newMembers.push(memberObj)
-    // this.setState({ members: newMembers})
     this.setState({members: [...this.state.members, memberObj]})
   };
   
