@@ -34,7 +34,16 @@ class App extends Component {
   };
 
   addHike = (hikeObj) => {
+    console.log(hikeObj)
     this.setState({hikes: [...this.state.hikes, hikeObj]})
+  };
+
+  deleteHike = (hikeId) => {
+    const targetHike = this.state.hikes.find(hike => hike.id === hikeId)
+    const hikeIndex = this.state.hikes.indexOf(targetHike)
+    let updatedHikes = [...this.state.hikes]
+    updatedHikes.splice(hikeIndex, 1)
+    this.setState({hikes: updatedHikes})
   };
   
   render(){
@@ -56,6 +65,7 @@ class App extends Component {
                 {...routerProps} 
                 hikes={this.state.hikes}
                 addHike={this.addHike}
+                deleteHike={this.deleteHike}
               />
             }
           />

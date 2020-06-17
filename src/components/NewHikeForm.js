@@ -38,7 +38,7 @@ export default class NewHikeForm extends React.Component {
   }
 
   render(){
-    console.log(this.state)
+    // console.log(this.state)
 
     const {location, distance, duration, start_at, host_id, description} = this.state
 

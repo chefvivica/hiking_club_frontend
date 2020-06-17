@@ -16,7 +16,8 @@ export class HikesContainer extends Component {
   };
 
   render() {
-    const { hikes, addHike } = this.props
+    console.log(this.props.hikes)
+    const { hikes, addHike, deleteHike } = this.props
 
     return (
       <div>
@@ -25,7 +26,13 @@ export class HikesContainer extends Component {
         </button>
         {this.state.showForm ? <NewHikeForm addHike={addHike}/> : null}
         <br></br>
-        {hikes.map(hike=> <HikeCard {...hike} key={hike.id}/>)}
+        {hikes.map(hike=> 
+          <HikeCard 
+            {...hike} 
+            key={hike.id} 
+            deleteHike={deleteHike}
+          />
+        )}
       </div>
       
     )
