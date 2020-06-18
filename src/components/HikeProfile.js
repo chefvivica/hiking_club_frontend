@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 const API = 'http://localhost:3000/hikes'
 export class HikeProfile extends Component {
 
+
   render(){
     if(!this.props.hike) return <div>loading</div>
     const {location,duration, img_url, start_at, description, distance, host, members} = this.props.hike
@@ -25,7 +26,6 @@ export class HikeProfile extends Component {
       <br></br><br></br>
       <input type="text" placeholder="leave a comment"/>
       <input type="submit" value="submit"/>
-      {/** we need to think about how to implement the comments */}
       
     </div>
     )

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
- 
+
 class Login extends Component {
 
   state = {
@@ -10,10 +10,9 @@ class Login extends Component {
   handleChange = e => this.setState({ [e.target.name]: e.target.value})
   render() {
     const {username, password} =this.state
-  
 
     return (
-      <form>
+      <form onSubmit={(e)=>this.props.findUser(e,this.state.username,this.props.match)}>
         <h1>Login</h1>
         <div>
           <label htmlFor="username">Username: </label>
