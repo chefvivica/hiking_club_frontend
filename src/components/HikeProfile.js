@@ -48,7 +48,6 @@ export class HikeProfile extends Component {
       <br></br><br></br>
       <input type="text" placeholder="leave a comment"/>
       <input type="submit" value="submit"/>
-      {/** we need to think about how to implement the comments */}
       
     </div>
     )

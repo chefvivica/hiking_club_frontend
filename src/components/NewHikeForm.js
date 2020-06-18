@@ -51,7 +51,7 @@ export default class NewHikeForm extends React.Component {
     return( 
 
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form className="new-hike-form" onSubmit={this.handleSubmit}>
           <div>
             <label htmlFor="location">Location: </label>
             <input 

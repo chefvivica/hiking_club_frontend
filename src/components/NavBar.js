@@ -24,7 +24,6 @@ export class NavBar extends Component {
     <NavLink to="/hikes" exact style={link} activeStyle={{background: "blue"}}>Hikes</NavLink>
     <NavLink to="/members" exact style={link} activeStyle={{background: "blue"}}>Members</NavLink>
     <NavLink to="/" exact style={link} activeStyle={{background: "green"}}>Log out</NavLink>
-    <input placeholder="🔍Search by location ..."/>
     </div>
 
     )
