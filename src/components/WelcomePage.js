@@ -15,12 +15,11 @@ export class WelcomePage extends Component {
 
     const { addMember } = this.props
     return (
-      <div>
+      <div className="welcome-page"> 
         <h1>Welcome To Hiking Club</h1>
-        <button onClick={this.toggle}>{this.state.showLogin? "Not a member yet? Join now!": "Already a member? Login now!"}</button>
         {this.state.showLogin? <Login/> : <Signup addMember={addMember}/> }
-        {/* <Login/>
-        <Signup addMember={addMember}/> */}
+        <br></br><br></br><br></br>
+        <button onClick={this.toggle}>{this.state.showLogin? "Not a member yet? Join now!": "Already a member? Login now!"}</button>
       </div>
     )
   }

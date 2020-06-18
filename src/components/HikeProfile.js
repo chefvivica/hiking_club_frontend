@@ -13,7 +13,7 @@ export class HikeProfile extends Component {
       <h5>Est. Distance: {distance} miles</h5>
       <h5>Est. Duration: {duration} hours</h5>
       <h5 className="description">Description: {description}</h5>
-      {/* <h5>Host: {host.name}</h5> */}
+
       <hr></hr>
         <div>
           This Hike's Group: 
