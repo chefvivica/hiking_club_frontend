@@ -7,8 +7,7 @@ const HikeCard = (props) => {
   const { location, start_at, distance, duration, id } = props
   if(!props.host) return <div>loading...</div>
   const {name} = props.host
- 
-  // console.log("card!!!", history)
+
 
   const handleClick = () => {
     console.log(id)

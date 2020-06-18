@@ -84,3 +84,27 @@ code {
 .welcome-page > h1 {
   font-size: 70px;
 }
+
+.hike-container > input{
+  float: left;
+  background-color: rgb(212, 255, 94);
+  font-weight: 800;
+}
+
+.hike-container > button{
+  background-color:  rgb(212, 255, 94);
+  font-weight: 800;
+}
+
+.new-hike-form{
+  background-color: rgb(216, 193, 88);
+  opacity: 70%;
+  font-weight: bold;
+}
+.new-hike-form > input{
+  font-weight: bolder;
+  font-size: 16px;
+  border-radius: 10px;
+  background-color: rgb(138, 224, 181);
+  color: rgb(29, 34, 34);
+}

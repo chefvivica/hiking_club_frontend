@@ -12,12 +12,12 @@ import HikesContainer from './container/HikesContainer'
 import HikeProfile from './components/HikeProfile';
 import Signup from './components/Signup';
 import Login from './components/Login';
-
 class App extends Component {
 
   state = {
     hikes: [],
-    members: []
+    members: [],
+    currentUsername:''
   }
 
   componentDidMount(){
@@ -45,9 +45,18 @@ class App extends Component {
     updatedHikes.splice(hikeIndex, 1)
     this.setState({hikes: updatedHikes})
   };
+
+  findUser = (e, username,match) => {
+    e.preventDefault()
+    if(this.state.members.find(member=> member.username===username)){
+      this.setState({currentUsername: username})
+      match.history.push("/hikes")
+    }else{
+      alert("Try again!")
+    }
+  }
   
   render(){
-    // console.log(this.state)
     return (
       <Router>
         <div className="App">
@@ -84,6 +93,7 @@ class App extends Component {
               <WelcomePage
                 {...routerProps}
                 addMember={this.addMember} 
+                findUser={this.findUser}
               />
             }
           />
