@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
+import moment from 'moment';
 import HikeProfile from './HikeProfile';
 
 const HikeCard = (props) => {
@@ -20,10 +21,11 @@ const HikeCard = (props) => {
       .then(props.deleteHike(id))
   }
 
+
   return(
     <div  className="all-hikes">
       <h3>{location}</h3>
-      <h5>Date: {start_at}</h5>
+      <h5>Date: {moment(start_at).format('MM/DD/YYYY h:mm a')}</h5>
       <h5>Est. Distance: {distance} miles</h5>
       <h5>Est. Duration: {duration} hours</h5>
       <p>Host: {props.host.name}</p>     

@@ -15,7 +15,9 @@ export class WelcomePage extends Component {
     const { addMember } = this.props
     return (
       <div className="welcome-page"> 
-        <h1>Welcome To Hiking Club</h1>
+        <h1>
+          Keyboard Jockey Hiking and Adventure Society
+        </h1>
         {this.state.showLogin? <Login match={this.props} findUser={this.props.findUser}/> : <Signup addMember={addMember}/> }
         <br></br><br></br><br></br>
         <button onClick={this.toggle}>{this.state.showLogin? "Not a member yet? Join now!": "Already a member? Login now!"}</button>

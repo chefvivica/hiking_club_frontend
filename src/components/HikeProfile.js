@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import EditHikeForm from './EditHikeForm'
+import moment from 'moment';
 
 const API = 'http://localhost:3000/hikes'
 
@@ -23,7 +24,7 @@ export class HikeProfile extends Component {
     <div className="hike-Pro">
       <h3>{location}</h3>
       <img src={img_url}/> 
-      <h5>Date: {start_at}</h5>
+      <h5>When: {moment(start_at).format('MM/DD/YYYY h:mm a')}</h5>
       <h5>Est. Distance: {distance} miles</h5>
       <h5>Est. Duration: {duration} hours</h5>
       <h5 className="description">Description: {description}</h5>
