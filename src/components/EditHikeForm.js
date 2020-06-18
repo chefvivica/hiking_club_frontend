@@ -1,17 +1,23 @@
 import React from 'react'
 
-const initState = {location: '', distance: '', duration: '', start_at: '', host_id: '', description: ''}
-
 const headers = { 
   'Content-Type': 'application/json', 
   Accept: 'application/json'
 }
 
-export default class NewHikeForm extends React.Component {
+export default class EditHikeForm extends React.Component {
 
-  state = initState
+  state = {
+    location: this.props.location, 
+    distance: this.props.distance, 
+    duration: this.props.duration, 
+    start_at: this.props.start_at, 
+    host_id: this.props.host_id, 
+    description: this.props.description
+  }
 
   handleChange = (e) => {
+    console.log(this.state.start_at)
     this.setState({
       [e.target.name]: e.target.value
     })
@@ -20,8 +26,8 @@ export default class NewHikeForm extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault()  
     
-    fetch('http://localhost:3000/hikes', {
-      method: "POST",
+    fetch(`http://localhost:3000/hikes/${this.props.id}`, {
+      method: "PATCH",
       headers: headers,
       body: JSON.stringify({
         location: this.state.location,
@@ -33,12 +39,12 @@ export default class NewHikeForm extends React.Component {
       })
     })
       .then(resp => resp.json())
-      .then(data => this.props.addHike(data))
-    this.setState(initState)
+      .then(hike => this.props.editHike(hike, hike.id))
+    this.props.handleClick()
   }
 
   render(){
-
+    console.log(this.state.start_at)
     const {
       location, 
       distance, 
@@ -102,7 +108,7 @@ export default class NewHikeForm extends React.Component {
             <input 
               type="datetime-local" 
               name="start_at" 
-              value={start_at}
+              value={(start_at || '').toString().substring(0, 16)}
               placeholder="Date/Time of Hike" 
               onChange={this.handleChange}
             />
@@ -119,7 +125,7 @@ export default class NewHikeForm extends React.Component {
             />
           </div>
           <br></br>
-          <input type="submit" value="Create Hike" />
+          <input type="submit" value="Update Hike" />
         </form>
       </div>
 

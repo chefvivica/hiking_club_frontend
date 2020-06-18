@@ -38,6 +38,15 @@ class App extends Component {
     this.setState({hikes: [...this.state.hikes, hikeObj]})
   };
 
+  editHike = (hike, hikeId) => {  
+    const targetHike = this.state.hikes.find(hike => hike.id === hikeId)
+    const hikeIndex = this.state.hikes.indexOf(targetHike)
+    console.log(hikeIndex)
+    let updatedHikes = [...this.state.hikes]
+    updatedHikes.splice(hikeIndex, 1, hike)
+    this.setState({hikes: updatedHikes})
+  }
+
   deleteHike = (hikeId) => {
     const targetHike = this.state.hikes.find(hike => hike.id === hikeId)
     const hikeIndex = this.state.hikes.indexOf(targetHike)
@@ -56,7 +65,12 @@ class App extends Component {
           <Route exact path='/hikes/:id' render={routerProps =>{
             const hikeId = parseInt(routerProps.match.url.split("/")[2])
             const targetHike = this.state.hikes.find(hike=> hike.id === hikeId)
-            return <HikeProfile hike={targetHike} hikeId={hikeId} hikeId={parseInt(routerProps.match.url.split("/")[2])}/> 
+            return <HikeProfile 
+              hike={targetHike} 
+              hikeId={hikeId} 
+              hikeId={parseInt(routerProps.match.url.split("/")[2])}
+              editHike={this.editHike}
+            /> 
           }}/>
           <Route 
             exact path='/hikes' 
