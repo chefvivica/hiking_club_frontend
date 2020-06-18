@@ -42,7 +42,7 @@ export class HikeProfile extends Component {
         <div>
           This Hike's Group: 
           <strong><p>{host.name} (Host)</p></strong>
-          There are<strong> {members.length} </strong> Members joined this group:
+          <strong> {members.length} </strong> Members joined this group:
           {members.map(member=>
           <strong key={members.indexOf(member)}><p style={{ color: 'blue' }}>{member.name}</p></strong>)}
         </div>
