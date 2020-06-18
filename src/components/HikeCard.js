@@ -29,6 +29,7 @@ const HikeCard = (props) => {
       <h5>Est. Duration: {duration} hours</h5>
       <p>Host: {props.host.name}</p>     
       <button onClick={() => history.push(`/hikes/${id}`)}>Hike Info</button>
+      <br></br>
       <button onClick={handleClick}>Cancel Hike</button>
     </div> 
 

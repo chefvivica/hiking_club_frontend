@@ -25,10 +25,25 @@ code {
   box-shadow: 3px 4px #278a48
 }
 
-button {
+.all-hikes > button {
   cursor: pointer;
+  background-color: rgb(164, 216, 171) ;
+  border-radius: 10px;
+  font-size: 16px;
+  
+}
+.all-hikes > p {
+  font-weight: bold;
+  font-size: initial;
+  color: rgba(32, 35, 56, 0.774);
+  
 }
 
+.all-hikes > h3 {
+  font-weight: bolder;
+  font-size: xx-large;
+  color: #278a48;
+}
 .members{
   text-align: center;
   border: rgb(245, 232, 232) solid 1px;
@@ -44,4 +59,28 @@ button {
   margin: auto;
   border: 3px solid #c1db9c;
   text-justify: distribute-all-lines;
+}
+
+
+.welcome-page {
+  position: absolute;
+  left: 0;
+  overflow: hidden;
+  min-width: 100%;
+  min-height: 100%;
+  background-image: url('https://www.banfflakelouise.com/sites/default/files/styles/l_1600_12x6/public/hiking_sentinel_pass_jake_dyson_2_horizontal.jpg?itok=jsU6BajR') ;
+  opacity: 70%;
+  
+}
+
+
+.welcome-page > button {
+  font-weight: bolder;
+  font-size: large;
+  background-color: rgb(31, 199, 101);
+  border-radius: 5px;
+}
+
+.welcome-page > h1 {
+  font-size: 70px;
 }
