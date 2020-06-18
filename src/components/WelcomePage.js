@@ -18,7 +18,7 @@ export class WelcomePage extends Component {
         <h1>
           Keyboard Jockey Hiking and Adventure Society
         </h1>
-        {this.state.showLogin? <Login match={this.props} findUser={this.props.findUser}/> : <Signup addMember={addMember}/> }
+        {this.state.showLogin? <Login match={this.props} findUser={this.props.findUser}/> : <Signup addMember={addMember} match={this.props} /> }
         <br></br><br></br><br></br>
         <button onClick={this.toggle}>{this.state.showLogin? "Not a member yet? Join now!": "Already a member? Login now!"}</button>
       </div>

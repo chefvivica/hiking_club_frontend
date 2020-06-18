@@ -22,8 +22,8 @@ export class HikeProfile extends Component {
 
     return(
     <div className="hike-Pro">
-      <h3>{location}</h3>
-      <img src={img_url}/> 
+      <h3 style={{ fontSize: '40px' }}>{location}</h3>
+      <img src={img_url}  alt="hiking picture"/> 
       <h5>When: {moment(start_at).format('MM/DD/YYYY h:mm a')}</h5>
       <h5>Est. Distance: {distance} miles</h5>
       <h5>Est. Duration: {duration} hours</h5>
@@ -42,8 +42,9 @@ export class HikeProfile extends Component {
         <div>
           This Hike's Group: 
           <strong><p>{host.name} (Host)</p></strong>
+          There are<strong> {members.length} </strong> Members joined this group:
           {members.map(member=>
-          <strong key={members.indexOf(member)}><p>{member.name}</p></strong>)}
+          <strong key={members.indexOf(member)}><p style={{ color: 'blue' }}>{member.name}</p></strong>)}
         </div>
       <button>Join!</button>
       <br></br><br></br>

@@ -35,6 +35,7 @@ export class Signup extends Component {
       alert("Passwords don't match")
     }
     this.setState(initState)
+    this.props.match.history.push("/hikes")
   }
 
   render() {
