@@ -21,10 +21,10 @@ class App extends Component {
   }
 
   componentDidMount(){
-    fetch('http://localhost:3000/hikes')
+    fetch('http://fast-forest-75910.herokuapp.com/hikes')
       .then(resp => resp.json())
       .then(hikes => this.setState({ hikes }))
-    fetch('http://localhost:3000/members')
+    fetch('http://fast-forest-75910.herokuapp.com/members')
       .then(resp => resp.json())
       .then(members => this.setState({ members }))
   };

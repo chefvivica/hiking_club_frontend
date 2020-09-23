@@ -20,7 +20,7 @@ export default class NewHikeForm extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault()  
     
-    fetch('http://localhost:3000/hikes', {
+    fetch('http://fast-forest-75910.herokuapp.com/hikes', {
       method: "POST",
       headers: headers,
       body: JSON.stringify({

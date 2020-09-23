@@ -26,7 +26,7 @@ export default class EditHikeForm extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault()  
     
-    fetch(`http://localhost:3000/hikes/${this.props.id}`, {
+    fetch(`http://fast-forest-75910.herokuapp.com/hikes/${this.props.id}`, {
       method: "PATCH",
       headers: headers,
       body: JSON.stringify({

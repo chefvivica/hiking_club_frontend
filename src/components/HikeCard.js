@@ -12,7 +12,7 @@ const HikeCard = (props) => {
 
   const handleClick = () => {
     console.log(id)
-    fetch(`http://localhost:3000/hikes/${id}`, {
+    fetch(`http://fast-forest-75910.herokuapp.com/hikes/${id}`, {
       method: "DELETE",
       headers: { 
         'Content-Type': 'application/json'

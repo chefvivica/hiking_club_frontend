@@ -19,7 +19,7 @@ export class Signup extends Component {
   handleSubmit = (e) => {
     e.preventDefault()  
     if(this.state.password === this.state.confirmation){
-      fetch('http://localhost:3000/members', {
+      fetch('http://fast-forest-75910.herokuapp.com/members', {
         method: "POST",
         headers: headers,
         body: JSON.stringify({

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import EditHikeForm from './EditHikeForm'
 import moment from 'moment';
 
-const API = 'http://localhost:3000/hikes'
+const API = 'http://fast-forest-75910.herokuapp.com/hikes'
 
 export class HikeProfile extends Component {
 
